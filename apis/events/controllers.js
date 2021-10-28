@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const { rawListeners } = require("../../app");
+const { find } = require("../../models/Event");
 
 const Event = require("../../models/Event");
 
@@ -35,7 +35,7 @@ exports.eventListDetails = async (req, res, next) => {
       });
     }
   } catch (error) {
-    next(error); // Check error logs
+    next(error);
   }
 };
 
@@ -73,6 +73,12 @@ exports.eventDelete = async (req, res, next) => {
         message: "Event Not Found",
       });
     }
+  } catch (error) {
+    next(error);
+  }
+};
+exports.eventFull = async (req, res, next) => {
+  try {
   } catch (error) {
     next(error);
   }

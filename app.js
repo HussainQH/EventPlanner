@@ -8,11 +8,12 @@ const { pathFinder } = require("./middleware/pathFinder");
 
 app.use(express.json());
 app.use(logger);
-app.use(pathFinder);
-app.use(errorHandler);
 app.use("/api/events", eventRouters);
+app.use(errorHandler);
+app.use(pathFinder);
 
 connectDb();
+
 const PORT = 8000;
 
 app.listen(PORT, () => {
